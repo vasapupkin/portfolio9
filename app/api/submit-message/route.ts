@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 async function extractTextFromUrl(url: string): Promise<string> {
   try {

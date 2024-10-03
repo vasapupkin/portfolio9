@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { navItems } from "@/data";
 import dynamic from "next/dynamic"
-import Image from "next/image";
 import Hero from "@/components/Hero";
 import Grid from "@/components/Grid";
 import Footer from "@/components/Footer";
@@ -24,6 +23,21 @@ const Home = () => {
     setLanguage(lang);
     setKey(prevKey => prevKey + 1);
   };
+  
+
+  useEffect(() => {
+ // Test POST request
+    fetch('/api/log-visit', { 
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    })
+      // .then(response => {
+      //   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      //   return response.json();
+      // })
+      // .then(data => console.log('Visit logged successfully:', data))
+      // .catch(error => console.error('Error logging visit:', error));
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: changeLanguage }}>

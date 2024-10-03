@@ -4,7 +4,6 @@ import UAParser from 'ua-parser-js';
 import axios from 'axios';
 import clientPromise from '@/lib/mongodb';
 
-
 export async function POST(request: NextRequest) {
   return handleVisit(request);
 }
@@ -20,11 +19,32 @@ async function getIpInfo(ip: string) {
 }
 
 async function handleVisit(request: NextRequest) {
-  const ip = getClientIp(request as any) || request.ip || '127.0.0.1';
+  // Log all headers for debugging
+  console.log('All headers:', Object.fromEntries(request.headers));
+
+  const forwardedFor = request.headers.get('x-forwarded-for');
+  const realIp = request.headers.get('x-real-ip');
+  const requestIp = getClientIp(request as any);
+
+  console.log('X-Forwarded-For:', forwardedFor);
+  console.log('X-Real-IP:', realIp);
+  console.log('request-ip result:', requestIp);
+
+  // Try to get the IP from various sources
+  const ip = forwardedFor?.split(',')[0] || realIp || requestIp || request.ip || '127.0.0.1';
+  console.log('Final detected IP:', ip);
+
   const userAgent = request.headers.get('user-agent') || '';
   const parser = new UAParser(userAgent);
   
-  const ipInfo = await getIpInfo(ip);
+  let ipInfo;
+  if (ip !== '127.0.0.1') {
+    ipInfo = await getIpInfo(ip);
+  } else {
+    // Use a placeholder IP for local testing
+    ipInfo = await getIpInfo('8.8.8.8');
+    console.log('Using placeholder IP for local testing');
+  }
   
   const data = {
     ip,
@@ -37,6 +57,8 @@ async function handleVisit(request: NextRequest) {
     browser: parser.getBrowser(),
     os: parser.getOS(),
   };
+
+  console.log('Data to be inserted:', data);
 
   try {
     const client = await clientPromise;

@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     }
     
     const jobDescription = await extractTextFromUrl(message);
-    const profile = 'https://www.astarion.info/';
+    const profile = 'https://www.ogdigital.de/';
     const profileDescription = await extractTextFromUrl(profile);
     const key = process.env.MY_KEY;
     const openai = new OpenAI({

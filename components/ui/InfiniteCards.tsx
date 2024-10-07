@@ -114,9 +114,13 @@ export const InfiniteMovingCards = ({
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
-                {/* add this div for the profile img */}
-                <div className="me-3">
-                  <img src="/profile.svg" alt="profile" />
+                {/* Update this div for the profile img */}
+                <div className="mr-3">
+                  <img 
+                    src={`/${['Franz', 'Leo', 'David'][idx % 3]}.png`} 
+                    alt={`${['Franz', 'Leo', 'David'][idx % 3]}'s profile`} 
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
                 </div>
                 <span className="flex flex-col gap-1">
                   {/* change text color, font-normal to font-bold, text-xl */}

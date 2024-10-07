@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
+import ClientConsentBanner from "../components/ClientConsentBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,16 +23,15 @@ export default function RootLayout({
         <link rel="icon" href="/bg.png" sizes="any" />
       </head>
       <body className={inter.className}>
-         <ThemeProvider
+        <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           {children}
-        </ThemeProvider>
 
-        
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ const Approach = () => {
           icon={<AceternityIcon order={language === 'en' ? "Development" : "Entwicklung"} />}
           des={language === 'en' ? 
             "I enjoy developing in C# & JavaScript - often using React.js or Next.js, EntityFramework. SQL are the databases, but I also use (nosql) mongo DB and cosmos DB when required. I use MVC and MVVC as architectural patterns. For CI/CD - GitHub, Vercel and Azure Tools. I use Azure Cloud for resource connection. I also have experience with Docker and Kubernetes. My development environment is VS Code or Visual Studio." :
-            "Ich entwickle gern in C# & JavaScript - dabei nutze ich oft React.js oder Next.js, EntityFramwork. SQL sind die Datenbanken, allerdings setzte ich, wenn erforderlich auch (nosql) mongo DB und cosmos DB ein. Als Architekturmuster benutze ich MVC und MVVC. Als CI/CD - GitHub, vercel sowie Azure Tools. Für die Ressourcenanbindung nutze ich Azure-Cloud. Außerdem habe ich Erfahrung in Umgang mit Docker und Kubernets. Meine Entwicklungsumgebung ist VS Code oder Visual Studio."
+            "Ich entwickle gern in C# & JavaScript - dabei nutze ich oft React.js oder Next.js. EntityFramwork, SQL sind die Datenbanken, allerdings setzte ich, wenn erforderlich auch (nosql) mongo DB und cosmos DB ein. Als Architekturmuster benutze ich MVC und MVVC. Als CI/CD - GitHub, vercel sowie Azure Tools. Für die Ressourcenanbindung nutze ich Azure-Cloud. Außerdem habe ich Erfahrung in Umgang mit Docker und Kubernetes. Meine Entwicklungsumgebung ist VS Code oder Visual Studio."
           }
         >
           <CanvasRevealEffect

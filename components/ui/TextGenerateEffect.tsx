@@ -36,7 +36,7 @@ export const TextGenerateEffect = ({
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
-          if (word === 'Bildungsweg,') {
+          if (word === 'TESTTTT,') {
             var href = '#contact';
             return (
               <motion.span

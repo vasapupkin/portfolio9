@@ -111,14 +111,13 @@ export const BentoGridItem = ({
                 {title}
               </div>
             </div>
-            <a href="/german-flag.png">
+          {/* <a href="/german-flag.png">
               <MagicButton
                 title={language === 'en' ? "My CV" : "Mein CV"}
                 icon={<span>→</span>}
                 position="right"
-                handleClick={() => {/* Add your click handler */}}
               />
-            </a>
+            </a>  */}
           </div>
         </div>
       ) : (

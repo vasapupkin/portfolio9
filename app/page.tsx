@@ -12,6 +12,7 @@ import Experience from "@/components/Experience";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import ConsentBanner from "@/components/ConsentBanner";
 
 const Scene = dynamic(() => import("@/components/Scene"), { ssr: false })
 
@@ -25,19 +26,19 @@ const Home = () => {
   };
   
 
-  useEffect(() => {
- // Test POST request
-    fetch('/api/log-visit', { 
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-    })
-      // .then(response => {
-      //   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      //   return response.json();
-      // })
-      // .then(data => console.log('Visit logged successfully:', data))
-      // .catch(error => console.error('Error logging visit:', error));
-  }, []);
+//   useEffect(() => {
+//  // Test POST request
+//     fetch('/api/log-visit', { 
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//     })
+//       // .then(response => {
+//       //   if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+//       //   return response.json();
+//       // })
+//       // .then(data => console.log('Visit logged successfully:', data))
+//       // .catch(error => console.error('Error logging visit:', error));
+//   }, []);
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: changeLanguage }}>
@@ -57,6 +58,7 @@ const Home = () => {
          
        
         </div> 
+        {/* <ConsentBanner /> */}
       </main>
     </LanguageContext.Provider>
   );

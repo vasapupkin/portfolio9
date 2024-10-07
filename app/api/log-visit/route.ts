@@ -20,15 +20,13 @@ async function getIpInfo(ip: string) {
 
 async function handleVisit(request: NextRequest) {
   // Log all headers for debugging
-  console.log('All headers:', Object.fromEntries(request.headers));
+ 
 
   const forwardedFor = request.headers.get('x-forwarded-for');
   const realIp = request.headers.get('x-real-ip');
   const requestIp = getClientIp(request as any);
 
-  console.log('X-Forwarded-For:', forwardedFor);
-  console.log('X-Real-IP:', realIp);
-  console.log('request-ip result:', requestIp);
+
 
   // Try to get the IP from various sources
   const ip = forwardedFor?.split(',')[0] || realIp || requestIp || request.ip || '127.0.0.1';
@@ -43,7 +41,7 @@ async function handleVisit(request: NextRequest) {
   } else {
     // Use a placeholder IP for local testing
     ipInfo = await getIpInfo('8.8.8.8');
-    console.log('Using placeholder IP for local testing');
+
   }
   
   const data = {
@@ -58,7 +56,7 @@ async function handleVisit(request: NextRequest) {
     os: parser.getOS(),
   };
 
-  console.log('Data to be inserted:', data);
+
 
   try {
     const client = await clientPromise;

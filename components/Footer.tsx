@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
           {language === 'en' ? (
             "Please add the link with the profile/project description of your request and AI will analyze if I am the right candidate for you."
           ) : (
-            "Bitte fügen Sie den Link mit der Profil/Projektbeschreibung Ihres Gesuches und AI analysiert, ob ich für Sie der passende Kandidat bin."
+            "Bitte fügen Sie den Link mit der Profil/Projektbeschreibung ein und AI analysiert, ob ich für Sie der passende Kandidat bin."
           )}
         </p>
         <input

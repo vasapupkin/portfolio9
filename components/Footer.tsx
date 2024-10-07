@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
           Copyright © 2024 Oleg Golovin
         </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
+        {/* <div className="flex items-center md:gap-3 gap-6">
           {socialMedia.map((info) => (
             <div
               key={info.id}
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </footer>
   );
